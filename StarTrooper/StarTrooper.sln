@@ -1,0 +1,88 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarTrooper", "StarTrooper\StarTrooper.csproj", "{138C4746-67DE-4A16-8412-5225F609B537}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarTrooperXNA-Convert", "StarTrooperXNA\StarTrooperXNA-Convert.csproj", "{6AD00CF7-FD1B-4CE3-9849-EA5FDF3BE683}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarTrooper XNA tutorial", "StarTrooper XNA tutorial\StarTrooper XNA tutorial.csproj", "{4B0287AB-96F8-4429-AB16-A5BADBCF21C5}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs05.codeplex.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = StarTrooper\u0020XNA\u0020tutorial\\Content\\Content.contentproj
+		SccProjectTopLevelParentUniqueName1 = StarTrooper\u0020XNA\u0020tutorial\\StarTrooper\u0020XNA\u0020tutorial.csproj
+		SccProjectName1 = StarTrooper\u0020XNA\u0020tutorial/Content
+		SccLocalPath1 = StarTrooper\u0020XNA\u0020tutorial\\Content
+		SccProjectUniqueName2 = StarTrooper\u0020XNA\u0020tutorial\\StarTrooper\u0020XNA\u0020tutorial.csproj
+		SccProjectName2 = StarTrooper\u0020XNA\u0020tutorial
+		SccLocalPath2 = StarTrooper\u0020XNA\u0020tutorial
+		SccProjectUniqueName3 = StarTrooper\\StarTrooper.csproj
+		SccProjectName3 = StarTrooper
+		SccLocalPath3 = StarTrooper
+		SccProjectUniqueName4 = StarTrooperXNA\\Content\\Content.contentproj
+		SccProjectTopLevelParentUniqueName4 = StarTrooperXNA\\StarTrooperXNA-Convert.csproj
+		SccProjectName4 = StarTrooperXNA/Content
+		SccLocalPath4 = StarTrooperXNA\\Content
+		SccProjectUniqueName5 = StarTrooperXNA\\StarTrooperXNA-Convert.csproj
+		SccProjectName5 = StarTrooperXNA
+		SccLocalPath5 = StarTrooperXNA
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{138C4746-67DE-4A16-8412-5225F609B537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{138C4746-67DE-4A16-8412-5225F609B537}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{138C4746-67DE-4A16-8412-5225F609B537}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{138C4746-67DE-4A16-8412-5225F609B537}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{138C4746-67DE-4A16-8412-5225F609B537}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{138C4746-67DE-4A16-8412-5225F609B537}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{138C4746-67DE-4A16-8412-5225F609B537}.Release|Any CPU.Build.0 = Release|Any CPU
+		{138C4746-67DE-4A16-8412-5225F609B537}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{138C4746-67DE-4A16-8412-5225F609B537}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{138C4746-67DE-4A16-8412-5225F609B537}.Release|x86.ActiveCfg = Release|Any CPU
+		{6AD00CF7-FD1B-4CE3-9849-EA5FDF3BE683}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{6AD00CF7-FD1B-4CE3-9849-EA5FDF3BE683}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{6AD00CF7-FD1B-4CE3-9849-EA5FDF3BE683}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{6AD00CF7-FD1B-4CE3-9849-EA5FDF3BE683}.Debug|x86.ActiveCfg = Debug|x86
+		{6AD00CF7-FD1B-4CE3-9849-EA5FDF3BE683}.Debug|x86.Build.0 = Debug|x86
+		{6AD00CF7-FD1B-4CE3-9849-EA5FDF3BE683}.Release|Any CPU.ActiveCfg = Release|x86
+		{6AD00CF7-FD1B-4CE3-9849-EA5FDF3BE683}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{6AD00CF7-FD1B-4CE3-9849-EA5FDF3BE683}.Release|Mixed Platforms.Build.0 = Release|x86
+		{6AD00CF7-FD1B-4CE3-9849-EA5FDF3BE683}.Release|x86.ActiveCfg = Release|x86
+		{6AD00CF7-FD1B-4CE3-9849-EA5FDF3BE683}.Release|x86.Build.0 = Release|x86
+		{E0DF92F4-006B-4C9F-9170-1A86F6C45D67}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E0DF92F4-006B-4C9F-9170-1A86F6C45D67}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{E0DF92F4-006B-4C9F-9170-1A86F6C45D67}.Debug|x86.ActiveCfg = Debug|x86
+		{E0DF92F4-006B-4C9F-9170-1A86F6C45D67}.Release|Any CPU.ActiveCfg = Release|x86
+		{E0DF92F4-006B-4C9F-9170-1A86F6C45D67}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{E0DF92F4-006B-4C9F-9170-1A86F6C45D67}.Release|x86.ActiveCfg = Release|x86
+		{4B0287AB-96F8-4429-AB16-A5BADBCF21C5}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{4B0287AB-96F8-4429-AB16-A5BADBCF21C5}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{4B0287AB-96F8-4429-AB16-A5BADBCF21C5}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{4B0287AB-96F8-4429-AB16-A5BADBCF21C5}.Debug|x86.ActiveCfg = Debug|x86
+		{4B0287AB-96F8-4429-AB16-A5BADBCF21C5}.Debug|x86.Build.0 = Debug|x86
+		{4B0287AB-96F8-4429-AB16-A5BADBCF21C5}.Release|Any CPU.ActiveCfg = Release|x86
+		{4B0287AB-96F8-4429-AB16-A5BADBCF21C5}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{4B0287AB-96F8-4429-AB16-A5BADBCF21C5}.Release|Mixed Platforms.Build.0 = Release|x86
+		{4B0287AB-96F8-4429-AB16-A5BADBCF21C5}.Release|x86.ActiveCfg = Release|x86
+		{4B0287AB-96F8-4429-AB16-A5BADBCF21C5}.Release|x86.Build.0 = Release|x86
+		{B0CBB5EE-3C3F-484E-902B-18E3597ACAE4}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{B0CBB5EE-3C3F-484E-902B-18E3597ACAE4}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{B0CBB5EE-3C3F-484E-902B-18E3597ACAE4}.Debug|x86.ActiveCfg = Debug|x86
+		{B0CBB5EE-3C3F-484E-902B-18E3597ACAE4}.Release|Any CPU.ActiveCfg = Release|x86
+		{B0CBB5EE-3C3F-484E-902B-18E3597ACAE4}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{B0CBB5EE-3C3F-484E-902B-18E3597ACAE4}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
