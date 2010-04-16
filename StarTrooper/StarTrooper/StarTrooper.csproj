@@ -98,6 +98,25 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="StarTrooperResources\Music\music.wav" />
+    <Content Include="StarTrooperResources\Pictures\Background.bmp" />
+    <Content Include="StarTrooperResources\Pictures\Condor01.bmp" />
+    <Content Include="StarTrooperResources\Pictures\Condor02.bmp" />
+    <Content Include="StarTrooperResources\Pictures\Condor03.bmp" />
+    <Content Include="StarTrooperResources\Pictures\Condor04.bmp" />
+    <Content Include="StarTrooperResources\Pictures\CondorExplosion01.bmp" />
+    <Content Include="StarTrooperResources\Pictures\CondorExplosion02.bmp" />
+    <Content Include="StarTrooperResources\Pictures\CondorExplosion03.bmp" />
+    <Content Include="StarTrooperResources\Pictures\Fire01.bmp" />
+    <Content Include="StarTrooperResources\Pictures\Fire02.bmp" />
+    <Content Include="StarTrooperResources\Pictures\Trooper01.bmp" />
+    <Content Include="StarTrooperResources\Pictures\Trooper02.bmp" />
+    <Content Include="StarTrooperResources\Pictures\Trooper03.bmp" />
+    <Content Include="StarTrooperResources\Pictures\Trooper04.bmp" />
+    <Content Include="StarTrooperResources\Pictures\Trooper05.bmp" />
+    <Content Include="StarTrooperResources\Pictures\Trooper06.bmp" />
+    <Content Include="StarTrooperResources\Sounds\die.wav" />
+    <Content Include="StarTrooperResources\Sounds\shoot.wav" />
     <Content Include="Tooper.ICO" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
