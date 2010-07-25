@@ -80,7 +80,6 @@ namespace TestProject
             m_Width = animation.m_Width;
             m_Height = animation.m_Height;
             m_Colour = animation.m_Colour;
-            m_Origin = animation.m_Origin;
 
         }
 
@@ -89,7 +88,7 @@ namespace TestProject
 
             m_Width = m_SpritesheetTexture.Width / FrameCount;
             m_Height = m_SpritesheetTexture.Height;
-
+			
             animation.m_Frames = new Frame[FrameCount];
 
             for (int i = m_StartingFrame; i < FrameCount; i++)
@@ -145,7 +144,7 @@ namespace TestProject
         {
             m_Colour.A = (byte)((sprite.Opacity * 255) / 100);
 
-            spritebatch.Draw(m_SpritesheetTexture, sprite.Position, CurrentFrame, m_Colour, sprite.Rotation, m_Origin,
+            spritebatch.Draw(m_SpritesheetTexture, sprite.Position, CurrentFrame, m_Colour, sprite.Rotation, sprite.Origin,
 sprite.Scale, sprite.SpriteEffect, 0);
             
 
@@ -310,7 +309,7 @@ sprite.Scale, sprite.SpriteEffect, 0);
         int m_Width;
         int m_Height;
         Color m_Colour = new Color(255,255,255);
-        Vector2 m_Origin = Vector2.Zero;
+
 
         Frame[] m_Frames;
         int m_CurrentFrame;

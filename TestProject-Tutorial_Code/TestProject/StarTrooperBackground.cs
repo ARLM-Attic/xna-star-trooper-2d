@@ -32,11 +32,11 @@ namespace TestProject
 
         public override void Update()
         {
-            Vector2 NewLocation = Location;
-            if (NewLocation.Y == StarTrooperGame.BackBufferHeight)
+            Vector2 NewPosition = Position;
+            if (NewPosition.Y == StarTrooperGame.BackBufferHeight)
             {
-                NewLocation.Y = -StarTrooperGame.BackBufferHeight;
-                Location = NewLocation;
+                NewPosition.Y = -StarTrooperGame.BackBufferHeight;
+                Position = NewPosition;
             }
         }
     }

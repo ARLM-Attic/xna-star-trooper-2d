@@ -34,12 +34,6 @@ namespace TestProject
         static List<Text2D> m_DeletedText2Ds = new List<Text2D>();
         static List<Text2D> m_AddedText2Ds = new List<Text2D>();
 
-
- 
-        static List<SoundEffect> m_Sounds = new List<SoundEffect>();
-        static List<SoundEffectInstance> m_Music = new List<SoundEffectInstance>();
-
-
 #if ZUNE
         private static int m_TargetFrameRate = 30;        
         private const int m_BackBufferWidth = 240;
@@ -57,6 +51,18 @@ namespace TestProject
         public static Condor Condor;
         public static Fire Fire;
 
+        public static SoundEffect Shoot;
+        public static SoundEffect Die;
+        public static SoundEffect Music;
+        public static SoundEffectInstance BackgroundMusic;
+
+        public static SpriteFont font;
+        public static int score;
+        public static Text2D ScoreText;
+
+        public static int shots;
+        public static Text2D ShotsText;
+
         static Random m_Random = new Random();
         TimeSpan SpawnElapsedTime;
         TimeSpan CondorSpawnRate = TimeSpan.FromSeconds(5);
@@ -64,7 +70,7 @@ namespace TestProject
         public static ParticleManager ParticleManager;
 
         public static TimerDisplay PerformanceTimer;
-
+        long m_LastBaseDrawTime;
 
         public StarTrooperGame()
         {
@@ -75,6 +81,7 @@ namespace TestProject
             this.Components.Add(new GamerServicesComponent(this));
 
             ParticleManager = new ParticleManager(this);
+
             this.Components.Add(ParticleManager);
 
             TargetElapsedTime = TimeSpan.FromSeconds(TargetFrameRate);
@@ -82,7 +89,7 @@ namespace TestProject
             graphics.PreferredBackBufferWidth = m_BackBufferWidth;
             graphics.PreferredBackBufferHeight = m_BackBufferHeight;
 
-
+            
         }
 
         /// <summary>
@@ -116,7 +123,30 @@ namespace TestProject
             FileManager.LoadKeyMappings();
 
             //If no settings present or setting were unable to be loaded, use the defaults
-            if (!Input.InputMappings.SettingsSaved) Input.Load_Defaults(); 
+            if (!Input.InputMappings.SettingsSaved) Input.Load_Defaults();
+
+
+            Shoot = Content.Load<SoundEffect>(@"Sounds\shoot");
+            Die = Content.Load<SoundEffect>(@"Sounds\die");
+
+            Music = Content.Load<SoundEffect>(@"Music\music");
+            BackgroundMusic = Music.CreateInstance();
+            BackgroundMusic.IsLooped = true;
+            BackgroundMusic.Play();
+
+            font = Content.Load<SpriteFont>(@"Fonts\SpriteFont1");
+
+            ScoreText = new Text2D(font);
+            ScoreText.Text = "Score: " + score.ToString();
+            ScoreText.Position = new Vector2(10, 10);
+            ScoreText.Color = Color.Red;
+            StarTrooperGame.Add(ScoreText);
+
+            ShotsText = new Text2D(font);
+            ShotsText.Text = "Shots: " + shots.ToString();
+            ShotsText.Position = new Vector2(150, 10);
+            ShotsText.Color = Color.Red;
+            StarTrooperGame.Add(ShotsText);
 
             // TODO: use this.Content to load your game content here
         }
@@ -168,6 +198,9 @@ namespace TestProject
             if (Input.SaveSettingsKey())
                 FileManager.SaveKeyMappings();
 
+            ScoreText.Text = "Score: " + score.ToString();
+            ShotsText.Text = "Shots: " + shots.ToString();
+
             base.Update(gameTime);
 #if DEBUG
             PerformanceTimer.StopTimer("Time to update in ticks: ");
@@ -210,21 +243,32 @@ namespace TestProject
             PerformanceTimer.StopTimer("Time to draw Text: ");
 #endif
 #if DEBUG
-            PerformanceTimer.StartTimer("Time to draw Base: ");
+            PerformanceTimer.StopTimer("Time to draw in ticks: ");
 #endif
+#if DEBUG
+            PerformanceTimer.StartTimer("Time to draw Base: ",m_LastBaseDrawTime);
+            m_LastBaseDrawTime = DateTime.Now.Ticks;
+#endif
+
             base.Draw(gameTime);
+
 #if DEBUG
             PerformanceTimer.StopTimer("Time to draw Base: ");
 #endif
-#if DEBUG
-            PerformanceTimer.StopTimer("Time to draw in ticks: ");
-#endif
+
+
+
         }
+
         public static void Add(Sprite sprite)
         {
             m_AddedSprites.Add(sprite);
         }
-        
+
+        public static void Add(Text2D text)
+        {
+            m_AddedText2Ds.Add(text);
+        }
 
         void InternalUpdate()
         {
@@ -272,16 +316,17 @@ namespace TestProject
 
             Background bg = new Background(background);
 
-            bg.Location = new Vector2(0, BackBufferHeight / 2);
+            bg.Position = new Vector2(0, BackBufferHeight / 2);
             bg.ScaleX = BackBufferWidth / background.Width;
             bg.ScaleY = BackBufferHeight / background.Height;
             bg.ZOrder = 10;
+            bg.Origin = Vector2.Zero;
             bg.Velocity = new Vector2(0,1);
 
             m_AddedSprites.Add(bg);
 
             Background bg2 = (Background)bg.Clone();
-            bg2.Location = new Vector2(0, -BackBufferHeight / 2);
+            bg2.Position = new Vector2(0, -BackBufferHeight / 2);
             bg2.ScaleX = BackBufferWidth / background.Width;
             bg2.ScaleY = BackBufferHeight / background.Height;
             bg2.ZOrder = 10;

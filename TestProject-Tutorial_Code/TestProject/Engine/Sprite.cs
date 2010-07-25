@@ -23,12 +23,14 @@ namespace TestProject
             : base()
         {
             AddAnimation(new Animation(Texture));
+            m_Origin = new Vector2((float)Texture.Width / 2, (float)Texture.Height / 2);
         }
 
         public Sprite(Texture2D Texture,int Frames, bool Loop)
             : base()
         {
             Animation animation = new Animation(Texture,Frames);
+            m_Origin = new Vector2((float)(Texture.Width / Frames) / 2, (float)Texture.Height / 2);
             animation.Loop = Loop;
             animation.Play();
 
@@ -209,23 +211,7 @@ namespace TestProject
         {
             set
             {
-                m_Position.X = value.X - (m_Animations[m_CurrentAnimationIndex].FrameWidth / 2);
-                m_Position.Y = value.Y - (m_Animations[m_CurrentAnimationIndex].FrameHeight / 2);
-
-                //  UpdateCollisionRectangle();
-            }
-            get
-            {
-                return m_Position;
-            }
-        }
-
-        public Vector2 Location
-        {
-            set
-            {
-                m_Position.X = value.X;
-                m_Position.Y = value.Y;
+                m_Position = value;
 
                 //  UpdateCollisionRectangle();
             }
@@ -350,6 +336,18 @@ namespace TestProject
                 return m_Speed;
             }
         }
+
+        public Vector2 Origin
+        {
+            set
+            {
+                m_Origin = value;
+            }
+            get
+            {
+                return m_Origin;
+            }
+        }
         
         #endregion
         
@@ -373,6 +371,7 @@ namespace TestProject
         static int m_Counter;
         SpriteEffects m_SpriteEffect = SpriteEffects.None;
         int m_Speed = 2;
+        Vector2 m_Origin = Vector2.Zero;
 
 
         #endregion PrivateData

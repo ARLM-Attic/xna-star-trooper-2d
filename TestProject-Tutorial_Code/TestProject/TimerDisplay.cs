@@ -14,13 +14,13 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace TestProject
 {
-    public struct Stopwatch
+    public class Stopwatch
     {
-        public DateTime Start;
-        public DateTime Stop;
-        public TimeSpan Difference { get { return Stop - Start; } }
+        public long Start;
+        public long Stop;
+        public long Difference { get { return Stop - Start; } }
     }
-    public struct DisplayInfo
+    public class DisplayInfo
     {
         public String DisplayText;
         public int DisplayCount;
@@ -40,9 +40,10 @@ namespace TestProject
             : base(game)
         {
             // TODO: Construct any child components here
-            font = Game.Content.Load<SpriteFont>("SpriteFont1");
+            font = Game.Content.Load<SpriteFont>(@"Fonts\PerformanceFont");
             
-
+            DrawOrder = 300;
+            
         }
 
         /// <summary>
@@ -84,8 +85,6 @@ namespace TestProject
         public override void Update(GameTime gameTime)
         {
             // TODO: Add your update code here
-            DrawOrder = 300;
-
 
             base.Update(gameTime);
         }
@@ -101,7 +100,7 @@ namespace TestProject
             spritebatch.Begin();
             foreach (String watch in m_GameWatches.Keys)
             {
-                spritebatch.DrawString(font, watch + "-" + m_GameWatches[watch].Difference.Ticks.ToString(), new Vector2(50, 55 + i), Color.White);
+                spritebatch.DrawString(font, watch + "-" + m_GameWatches[watch].Difference.ToString(), new Vector2(50, 55 + i), Color.White);
                 i += 20;
             }
             foreach (int info in m_DisplayInformation.Keys)
@@ -115,29 +114,34 @@ namespace TestProject
             base.Draw(gameTime);
         }
 
+        public void StartTimer(String StopwatchName,long Time)
+        {
+            try { m_GameWatches[StopwatchName].Start = Time; }
+            catch { Stopwatch Timer = new Stopwatch(); Timer.Start = Time; m_GameWatches.Add(StopwatchName, Timer); }
+
+        }
+
         public void StartTimer(String StopwatchName)
         {
-            Stopwatch Timer;
-            try {Timer = m_GameWatches[StopwatchName]; }
-            catch { Timer = new Stopwatch(); m_GameWatches.Add(StopwatchName, Timer); }
-            Timer.Start = DateTime.Now;
-            m_GameWatches[StopwatchName] = Timer;
+            StartTimer(StopwatchName, DateTime.Now.Ticks);
+        }
+
+        public void StopTimer(String StopwatchName, long Time)
+        {
+            try { m_GameWatches[StopwatchName].Stop = Time; }
+            catch { Stopwatch Timer = new Stopwatch(); Timer.Stop = Time; m_GameWatches.Add(StopwatchName, Timer); }
         }
 
         public void StopTimer(String StopwatchName)
         {
-            Stopwatch Timer;
-            try { Timer = m_GameWatches[StopwatchName]; }
-            catch { Timer = new Stopwatch(); m_GameWatches.Add(StopwatchName, Timer); }
-            Timer.Stop = DateTime.Now;
-            m_GameWatches[StopwatchName] = Timer;
+            StopTimer(StopwatchName, DateTime.Now.Ticks);
         }
 
         public void AddUpdateDisplayInfo(int ID, String DisplayText,int value)
         {
             DisplayInfo info;
             try { info = m_DisplayInformation[ID]; }
-            catch { info = new DisplayInfo(); }
+            catch { info = new DisplayInfo(); m_DisplayInformation.Add(ID, info); }
             info.DisplayText = DisplayText;
             info.DisplayCount = value;
             m_DisplayInformation[ID] = info;

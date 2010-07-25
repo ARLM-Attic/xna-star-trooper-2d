@@ -66,7 +66,8 @@ namespace TestProject
         fire.Velocity = new Vector2(0, -4);
         StarTrooperGame.Add(fire); // set the fire sprite active
         FireballLaunch(new Vector2(Position.X, Position.Y - 35), new Vector2(0, -40), new Vector2(0, -0.5f));
-
+        StarTrooperGame.Shoot.Play();
+        StarTrooperGame.shots++;
 
     }
     void FireballLaunch(Vector2 position, Vector2 velocity, Vector2 accel)
