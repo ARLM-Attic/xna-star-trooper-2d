@@ -14,7 +14,6 @@ namespace Starter3DGame
         public Vector3 Direction;
 		public Vector3 Rotation;
 		public float Speed;
-		public float Scale = 0.005f;
 
         public bool isActive;
 
@@ -38,7 +37,7 @@ namespace Starter3DGame
 
             Position += Direction * Speed *
                         GameConstants.AsteroidSpeedAdjustment * delta;
-			//TransformMatrix = Matrix.CreateScale(Scale) * RotationMatrix * Matrix.CreateTranslation(Position);
+			//TransformMatrix = RotationMatrix * Matrix.CreateTranslation(Position);
 
             if (Position.X > GameConstants.PlayfieldSizeX)
                 Position.X -= 2 * GameConstants.PlayfieldSizeX;

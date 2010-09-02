@@ -19,7 +19,6 @@ namespace Starter3DGame
 		public Vector2 Target = Vector2.Zero;
 		//offset due to Model
 		float offset = MathHelper.PiOver2;
-		public float Scale = 0.005f;
 
 
 
@@ -33,7 +32,7 @@ namespace Starter3DGame
 
         //Velocity of the model, applied each frame to the model's position
         public Vector3 Velocity = Vector3.Zero;
-        private const float VelocityScale = 5.0f; //amplifies controller speed input
+        private const float VelocityScale = 0.3f; //amplifies controller speed input
         
         public bool isActive = true;
 

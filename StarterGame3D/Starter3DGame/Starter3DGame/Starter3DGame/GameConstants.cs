@@ -9,13 +9,13 @@ namespace Starter3DGame
     {
         //camera constants
         public const float CameraHeight = 250.0f;
-        public const float PlayfieldSizeX = 270f;
-        public const float PlayfieldSizeY = 500f;
+        public const float PlayfieldSizeX = 70f;
+        public const float PlayfieldSizeY = 115f;
 		//asteroid constants
         public const int NumAsteroids = 5;
-        public const float AsteroidMinSpeed = 100.0f;
-        public const float AsteroidMaxSpeed = 300.0f;
-        public const float AsteroidSpeedAdjustment = 5.0f;
+        public const float AsteroidMinSpeed = 10f;
+        public const float AsteroidMaxSpeed = 30.0f;
+        public const float AsteroidSpeedAdjustment = 0.5f;
         //collision constants
         public const float AsteroidBoundingSphereScale = 0.95f;  //95% size
         public const float ShipBoundingSphereScale = 0.5f;  //50% size

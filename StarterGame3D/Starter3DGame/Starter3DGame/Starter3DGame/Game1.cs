@@ -201,15 +201,15 @@ namespace Starter3DGame
             //Setup Camera
             aspectRatio = graphics.GraphicsDevice.Viewport.AspectRatio;
 
-            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(
-                MathHelper.ToRadians(45.0f), aspectRatio,
-                1,
-                GameConstants.CameraHeight + 10.0f);
+			projectionMatrix = Matrix.CreatePerspectiveFieldOfView(
+			  MathHelper.ToRadians(45.0f), aspectRatio,
+			  GameConstants.CameraHeight - 100.0f,
+			  GameConstants.CameraHeight + 100.0f);
 
             viewMatrix = Matrix.CreateLookAt(cameraPosition, Vector3.Zero, Vector3.Up);
 
             //Load Models
-            ship.Model = Content.Load<Model>(@"Models\p1_wedge");
+			ship.Model = Content.Load<Model>(@"Models\p1_wedge");
             ship.Transforms = SetupEffectDefaults(ship.Model);
 			
             AsteroidModel = Content.Load<Model>(@"Models\asteroid");
@@ -300,13 +300,13 @@ namespace Starter3DGame
 
             if (ship.isActive)
             {
-                DrawModel(ship.Model, ship.TransformMatrix, ship.Transforms, ship.Scale);
+                DrawModel(ship.Model, ship.TransformMatrix, ship.Transforms);
             }
             for (int i = 0; i < GameConstants.NumAsteroids; i++)
             {
                 if (asteroidList[i].isActive)
                 {
-					DrawModel(AsteroidModel, asteroidList[i].TransformMatrix, AsteroidsTransforms, asteroidList[i].Scale);
+					DrawModel(AsteroidModel, asteroidList[i].TransformMatrix, AsteroidsTransforms);
                 }
             }
             for (int i = 0; i < GameConstants.NumBullets; i++)
@@ -324,12 +324,8 @@ namespace Starter3DGame
             base.Draw(gameTime);
         }
 
-		public static void DrawModel(Model model, Matrix modelTransform, Matrix[] absoluteBoneTransforms)
-		{
-			DrawModel(model,modelTransform, absoluteBoneTransforms,1f);
-		}
 
-        public static void DrawModel(Model model, Matrix modelTransform, Matrix[] absoluteBoneTransforms, float Scale)
+        public static void DrawModel(Model model, Matrix modelTransform, Matrix[] absoluteBoneTransforms)
         {
             //Draw the model, a model can have multiple meshes, so loop
             foreach (ModelMesh mesh in model.Meshes)
@@ -337,7 +333,7 @@ namespace Starter3DGame
                 //This is where the mesh orientation is set
                 foreach (BasicEffect effect in mesh.Effects)
                 {
-                    effect.World = absoluteBoneTransforms[mesh.ParentBone.Index] * modelTransform *  Matrix.CreateScale(Scale);
+                    effect.World = absoluteBoneTransforms[mesh.ParentBone.Index] * modelTransform;
                 }
                 //Draw the mesh, will use the effects set above.
                 mesh.Draw();
