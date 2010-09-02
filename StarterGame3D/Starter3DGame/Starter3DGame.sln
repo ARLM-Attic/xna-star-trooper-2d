@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starter3DGame", "Starter3DGame\Starter3DGame\Starter3DGame.csproj", "{BE1C5885-09DE-4DD6-B1FE-7FACA3259E1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starter3DGameContent", "Starter3DGame\Starter3DGameContent\Starter3DGameContent.contentproj", "{B5F172A2-758E-4D49-83CE-B2D0E7B6488C}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs05
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Starter3DGame\\Starter3DGame\\Starter3DGame.csproj
+		SccProjectName1 = Starter3DGame/Starter3DGame
+		SccLocalPath1 = Starter3DGame\\Starter3DGame
+		SccProjectUniqueName2 = Starter3DGame\\Starter3DGameContent\\Starter3DGameContent.contentproj
+		SccProjectName2 = Starter3DGame/Starter3DGameContent
+		SccLocalPath2 = Starter3DGame\\Starter3DGameContent
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Windows Phone = Debug|Windows Phone
+		Release|Any CPU = Release|Any CPU
+		Release|Windows Phone = Release|Windows Phone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE1C5885-09DE-4DD6-B1FE-7FACA3259E1C}.Debug|Any CPU.ActiveCfg = Debug|Windows Phone
+		{BE1C5885-09DE-4DD6-B1FE-7FACA3259E1C}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
+		{BE1C5885-09DE-4DD6-B1FE-7FACA3259E1C}.Debug|Windows Phone.Build.0 = Debug|Windows Phone
+		{BE1C5885-09DE-4DD6-B1FE-7FACA3259E1C}.Debug|Windows Phone.Deploy.0 = Debug|Windows Phone
+		{BE1C5885-09DE-4DD6-B1FE-7FACA3259E1C}.Release|Any CPU.ActiveCfg = Release|Windows Phone
+		{BE1C5885-09DE-4DD6-B1FE-7FACA3259E1C}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
+		{BE1C5885-09DE-4DD6-B1FE-7FACA3259E1C}.Release|Windows Phone.Build.0 = Release|Windows Phone
+		{BE1C5885-09DE-4DD6-B1FE-7FACA3259E1C}.Release|Windows Phone.Deploy.0 = Release|Windows Phone
+		{B5F172A2-758E-4D49-83CE-B2D0E7B6488C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5F172A2-758E-4D49-83CE-B2D0E7B6488C}.Debug|Windows Phone.ActiveCfg = Debug|Any CPU
+		{B5F172A2-758E-4D49-83CE-B2D0E7B6488C}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5F172A2-758E-4D49-83CE-B2D0E7B6488C}.Release|Windows Phone.ActiveCfg = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
